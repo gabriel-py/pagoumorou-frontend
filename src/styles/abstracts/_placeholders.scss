@@ -1,0 +1,64 @@
+@import "./variables";
+@import "./typography";
+@import "./breakpoints";
+
+%font-family {
+  font-family: "Lato", Helvetica, Arial, Verdana, sans-serif;
+}
+
+%flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+%content {
+  @extend %flex;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-md;
+  padding-left: $spacing-md;
+
+  flex-direction: column;
+
+  width: 100%;
+  max-width: $content-width + ($spacing-md * 2);
+
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-right: $spacing-lg;
+    padding-left: $spacing-lg;
+
+    max-width: $content-width + ($spacing-lg * 2);
+  }
+}
+
+%button {
+  @extend %flex;
+
+  border: none;
+  border-radius: $radius-xl;
+  padding: $spacing-md;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  cursor: pointer;
+
+  color: #fff;
+  background-color: $color-secondary;
+
+  transition: 300ms;
+
+  font-size: $font-size-b2;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-none;
+
+  &:hover {
+    background-color: $color-secondary-800;
+  }
+}

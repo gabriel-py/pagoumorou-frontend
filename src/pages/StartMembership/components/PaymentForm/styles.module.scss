@@ -1,0 +1,242 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+
+    .defaultPlanInfo {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 18px;
+        width: 100%;
+
+        .cardHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+
+            .defaultPlanInfoFirstColumn {
+                display: flex;
+                flex-direction: column;
+
+                .planoLabel {
+                    font-size: 12px;
+                }
+
+                .planoValue {
+                    font-size: 18px;
+                    font-weight: $font-weight-bold;
+                }
+
+                .planoDescription {
+                    font-size: 12px;
+                    min-height: 12px;
+                }
+            }
+
+            .defaultPlanInfoSecondColumn {
+                .totalDevido {
+                    display: flex;
+                    align-items: center;
+
+                    .totalDevidoLabel {
+                        font-size: 16px;
+                        font-weight: $font-weight-bold;
+                    }
+
+                    .expandIcon {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+        .cardCollapsedContent {
+            margin-top: 16px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .divider {
+                height: 0.5px;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+
+            .summary {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .summaryItem {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    padding-right: 32px;
+
+                    .summaryItemLine {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 14px;
+
+                        .summaryItemLineValue {
+                        }
+
+                        .summaryItemLineObservation {
+                            font-size: 12px;
+                            color: #7b55db;
+                            font-weight: $font-weight-semibold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .paymentFormSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+
+        .sectionTitle {
+            font-size: 14px;
+            font-weight: $font-weight-bold;
+        }
+
+        .paymentFormBox {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            padding: 18px;
+            width: 100%;
+            gap: 16px;
+
+            .paymentFormBoxPaymentOption {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .paymentFormBoxPaymentOptionLabel {
+                    display: flex;
+                    align-items: center;
+                    gap: 24px;
+
+                    .paymentFormBoxPaymentOptionText {
+                        font-size: 14px;
+                        font-weight: $font-weight-bold;
+                    }
+                }
+
+                .customRadio {
+                    background-color: red;
+                }
+            }
+
+            .form {
+                padding-top: 16px;
+                padding-bottom: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .submitSection {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+
+                    .submitSectionObservation {
+                        font-size: 14px;
+                        color: rgba(0, 0, 0, 0.4);
+                        font-weight: $font-weight-semibold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+
+    .label {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .input {
+        filter: none;
+        box-shadow: none;
+        outline: none;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+
+    .error {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+.nextStepButton {
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: gray;
+        border-color: rgba(0, 0, 0, 0.2);
+        border: unset;
+        color: lightgray;
+    }
+}
+
+.input {
+    filter: none;
+    box-shadow: none;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}

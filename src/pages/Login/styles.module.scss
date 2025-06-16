@@ -1,0 +1,180 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.screen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+    }
+
+    .form {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 48px;
+            width: 100%;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+
+            .contentTitle {
+                text-align: center;
+                font-size: 36px;
+                font-weight: $font-weight-semibold;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .contentSubtitle {
+                text-align: center;
+                font-size: 24px;
+                font-weight: $font-weight-regular;
+            }
+        }
+    }
+
+    .banner {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+
+        .needHelpSpan {
+            display: flex;
+            justify-content: end;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-right: 24px;
+            padding-top: 32px;
+            font-size: 12pt;
+            font-weight: $font-weight-bold;
+        }
+
+        .title {
+            padding-left: 100px;
+            padding-right: 100px;
+            line-height: 100px;
+
+            .titleH1 {
+                font-size: 64px;
+                font-weight: 600;
+                font-family: 'Arial';
+
+                .quote {
+                    font-size: 3rem;
+                    color: #ffffff;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+}
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    padding-right: 48px;
+    gap: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 500px;
+
+    @media (max-width: $breakpoint-mobile) {
+        min-width: unset;
+    }
+
+    .formBoxTitle {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+        margin-bottom: 12px;
+    }
+
+    .inputArea {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+
+        .label {
+            font-weight: 500;
+        }
+
+        .forgotMyPassword {
+            font-size: 12px;
+            color: #978f8f;
+            font-weight: $font-weight-semibold;
+        }
+
+        .togglePassword {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+
+    .formBoxFooterText {
+        margin-top: 12px;
+        color: #bcb8b8;
+        font-weight: $font-weight-bold;
+
+        a {
+            color: #506a7a;
+            text-decoration: underline;
+        }
+    }
+}
+
+.input {
+    filter: none;
+    box-shadow: none;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 18px;
+    font-size: 18px;
+    color: white;
+    font-weight: $font-weight-bold;
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: gray;
+        border-color: rgba(0, 0, 0, 0.2);
+        border: unset;
+        color: lightgray;
+    }
+}

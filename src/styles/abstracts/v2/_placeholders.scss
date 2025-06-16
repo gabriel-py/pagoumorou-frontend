@@ -1,0 +1,153 @@
+@import './variables';
+@import './typography';
+@import './breakpoints';
+
+%flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+%content {
+  @extend %flex;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-md;
+  padding-left: $spacing-md;
+
+  flex-direction: column;
+
+  width: 100%;
+  max-width: $content-width + ($spacing-md * 2);
+
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-right: $spacing-lg;
+    padding-left: $spacing-lg;
+
+    max-width: $content-width + ($spacing-lg * 2);
+  }
+}
+
+%button {
+  @extend %flex;
+
+  width: 100%;
+  border-color: $color-primary;
+  background-color: $color-primary;
+  color: $color-neutral-0;
+  cursor: pointer;
+  transition: 0.3s;
+
+  border: 1px solid;
+  border-radius: $spacing-xs;
+  padding: $spacing-md;
+  align-items: center;
+  justify-content: center;
+
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-lg;
+
+  &:hover {
+    border-color: $color-primary;
+    background-color: transparent;
+    color: $color-primary;
+  }
+}
+
+%react-markdown {
+  color: $color-neutral-400;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-lg;
+
+  strong {
+    font-weight: $font-weight-semibold;
+  }
+
+  p {
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin-bottom: $spacing-lg;
+    padding-left: $spacing-xl;
+  }
+
+  ol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: $spacing-xl;
+    margin-left: $spacing-4xl;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      margin-top: $spacing-md;
+      margin-left: $spacing-xl;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      font-size: $font-size-md;
+      line-height: $line-height-lg;
+    }
+  }
+
+  h1 {
+    font-size: $font-size-6xl;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  h2 {
+    font-size: $font-size-4xl;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  h3 {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-2xl;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: $font-size-xl;
+    }
+  }
+}
+
+%link-button {
+  color: $color-primary;
+
+  svg {
+    path {
+      fill: $color-primary;
+    }
+  }
+
+  &:focus {
+    color: $color-primary-300;
+
+    text-decoration: underline;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

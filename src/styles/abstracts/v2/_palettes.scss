@@ -1,0 +1,9 @@
+@import './mixins';
+
+.vdp-palette {
+  @include palette-vdp();
+}
+
+.seguro-chip-pallete {
+  @include palette-seguro-chip();
+}

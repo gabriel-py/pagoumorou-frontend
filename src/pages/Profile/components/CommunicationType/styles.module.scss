@@ -1,0 +1,25 @@
+.communicationType {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7e7878;
+
+    .communicationTypeInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .communicationTypeInfoTitle {
+        font-size: 14px;
+      }
+
+      .communicationTypeInfoDescription {
+        font-size: 10px;
+      }
+    }
+
+    svg {
+      font-size: 64px;
+      cursor: pointer;
+    }
+}

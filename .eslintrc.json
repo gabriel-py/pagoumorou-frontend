@@ -1,0 +1,30 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb", "airbnb/hooks", "airbnb-typescript", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "unused-imports", "import"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "react/react-in-jsx-scope": "off",
+    "unused-imports/no-unused-imports": "error",
+    "react/require-default-props": "off",
+    "react/function-component-definition": "off",
+    "jsx-a11y/control-has-associated-label": "off"
+  },
+  "overrides": [
+    {
+      "files": ["jest.config.cjs"],
+      "parserOptions": {
+        "project": [] // empty array to exclude from TypeScript checking
+      }
+    }
+  ]
+}

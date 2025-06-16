@@ -1,0 +1,19 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.progressBar {
+  height: 6px;
+  width: 100%;
+  border-radius: 40px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #7b55db;
+  border-radius: 40px;
+  transition: width 0.3s ease;
+}

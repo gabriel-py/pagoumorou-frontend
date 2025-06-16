@@ -1,0 +1,31 @@
+@import "./variables";
+
+// Margin
+@mixin m($size: 1) {
+  margin: ($spacing-md * $size);
+}
+
+@mixin my($size: 1) {
+  margin-top: ($spacing-md * $size);
+  margin-bottom: ($spacing-md * $size);
+}
+
+@mixin mx($size: 1) {
+  margin-right: ($spacing-md * $size);
+  margin-left: ($spacing-md * $size);
+}
+
+// Padding
+@mixin p($size: 1) {
+  padding: ($spacing-md * $size);
+}
+
+@mixin py($size: 1) {
+  padding-top: ($spacing-md * $size);
+  padding-bottom: ($spacing-md * $size);
+}
+
+@mixin px($size: 1) {
+  padding-right: ($spacing-md * $size);
+  padding-left: ($spacing-md * $size);
+}

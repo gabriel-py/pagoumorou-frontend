@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+    align-items: start;
+}
+
+.childWrapper {
+    display: flex;
+    padding: 8px;
+}
+
+.divider {
+    background-color: #dbd2d2;
+}
+
+.vertical .divider {
+    height: 1px;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.horizontal .divider {
+    height: 100%;
+    width: 1px;
+    margin: 0 8px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+    width: 100%;
+}
