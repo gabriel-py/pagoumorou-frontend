@@ -1,0 +1,18 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.container {
+  width: fit-content;
+  background-color: #037E73;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
