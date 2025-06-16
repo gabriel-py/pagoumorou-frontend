@@ -1,0 +1,28 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.button {
+  cursor: pointer;
+  padding: 18px;
+  font-size: 18px;
+  color: white;
+  font-weight: $font-weight-bold;
+  background-color: #005aa3;
+  border: 1px solid #005aa3;
+  border-radius: 6px;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+    border-color: rgba(0, 0, 0, 0.2);
+    border: unset;
+    color: lightgray;
+  }
+
+  &:hover {
+    background-color: white;
+    color: #005aa3;
+  }
+}

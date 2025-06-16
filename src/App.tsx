@@ -17,6 +17,8 @@ import MyPlan from "./pages/MyPlan";
 import Upload from "./pages/Upload";
 import Dashboard from "./pages/Dashboard";
 import CMSDashboard from "./pages/CMSDashboard";
+import Search from "./pages/Search";
+import NewLayout from "./layouts/NewLayout";
 
 function App() {
   const router = createBrowserRouter([
@@ -81,6 +83,18 @@ function App() {
         {
           path: "membership",
           element: <StartMembership />,
+          loader: async () => null,
+          errorElement: <div>erro</div>,
+        }
+      ],
+    },
+    {
+      path: "/",
+      element: <NewLayout />,
+      children: [
+        {
+          path: "search",
+          element: <Search />,
           loader: async () => null,
           errorElement: <div>erro</div>,
         }

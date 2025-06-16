@@ -4,15 +4,13 @@ interface IProgressBar {
     progress: number;
 }
 
-const ProgressBar = ({ progress }: IProgressBar) => {
-  return (
+const ProgressBar = ({ progress }: IProgressBar) => (
     <div className={styles.progressBar}>
       <div
         className={styles.progress}
         style={{ width: `${progress}%` }}
-      ></div>
+       />
     </div>
   );
-};
 
 export default ProgressBar;

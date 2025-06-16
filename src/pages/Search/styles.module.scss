@@ -1,0 +1,26 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 72px;
+    gap: 36px;
+    width: 100vw;
+    min-height: 100vh;
+
+    .pageTitle {
+        font-size: 28px;
+    }
+}
+
+.roomsResults {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+    width: 60%;
+}
