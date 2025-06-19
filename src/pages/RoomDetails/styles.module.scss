@@ -1,0 +1,80 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    .mainImg {
+        width: 50%;
+        min-height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .otherImages {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 16px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+
+    .leftColumn,
+    .rightColumn {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        gap: 24px;
+    }
+}
+
+.accomodationBasicInfo,
+.aboutAccomodation,
+.availability {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h1 {
+        font-size: 24px;
+    }
+
+    span {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+.tagArea {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+}

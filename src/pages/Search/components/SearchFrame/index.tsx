@@ -37,10 +37,10 @@ const SearchFrame = () => {
   const [location, setLocation] = useState<LocationOption | null>(null);
   const [options, setOptions] = useState<LocationOption[]>([]);
   const [moveDate, setMoveDate] = useState<Dayjs | null>(null);
-  const [gender, setGender] = useState();
+  const [gender, setGender] = useState<string>();
   const [searchInput, setSearchInput] = useState('');
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
-  const [stayDuration, setStayDuration] = useState();
+  const [stayDuration, setStayDuration] = useState<number>();
 
   const handleSearch = () => {
     console.log({ location, moveDate, gender });
@@ -95,16 +95,8 @@ const SearchFrame = () => {
         sx={{ minWidth: 200, flex: 1 }}
       />
 
-      <DatePicker
-        label="Data de mudança"
-        value={moveDate}
-        onChange={(newDate) => setMoveDate(newDate)}
-        format='DD/MM/YYYY'
-        sx={{ minWidth: 200, flex: 1 }}
-      />
-
       <FormControl sx={{ minWidth: 200, flex: 1 }}>
-        <InputLabel>Gênero</InputLabel>
+        <InputLabel>Gênero do hóspede</InputLabel>
         <Select
           value={gender}
           label="Gênero"
@@ -117,6 +109,14 @@ const SearchFrame = () => {
           ))}
         </Select>
       </FormControl>
+
+      <DatePicker
+        label="Data de mudança"
+        value={moveDate}
+        onChange={(newDate) => setMoveDate(newDate)}
+        format='DD/MM/YYYY'
+        sx={{ minWidth: 200, flex: 1 }}
+      />
 
       <FormControl sx={{ minWidth: 200, flex: 1 }}>
         <InputLabel>Tempo de estadia</InputLabel>

@@ -21,6 +21,7 @@ import Dashboard from "./pages/Dashboard";
 import CMSDashboard from "./pages/CMSDashboard";
 import Search from "./pages/Search";
 import NewLayout from "./layouts/NewLayout";
+import RoomDetails from "./pages/RoomDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -99,7 +100,13 @@ function App() {
           element: <Search />,
           loader: async () => null,
           errorElement: <div>erro</div>,
-        }
+        },
+        {
+          path: "details",
+          element: <RoomDetails />,
+          loader: async () => null,
+          errorElement: <div>erro</div>,
+        },
       ],
     },
   ]);
