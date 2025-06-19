@@ -6,9 +6,10 @@ import Tag from '@/components/Tag';
 
 interface IRoomCard {
   index: number;
+  showSeeMoreBtn?: boolean;
 }
 
-const RoomCard = ({ index }: IRoomCard) => {
+const RoomCard = ({ index, showSeeMoreBtn = true }: IRoomCard) => {
   console.log(index)
   const tags = ["WiFi", "Ar Condicionado", "Geladeira"]
 
@@ -35,7 +36,7 @@ const RoomCard = ({ index }: IRoomCard) => {
       </div>
       <div className={styles.leftSection}>
         <h1 className={styles.price}>R$ 1.200,00 / mês</h1>
-        <Button label='Ver mais' className={styles.button} />
+        {showSeeMoreBtn && <Button label='Ver mais' className={styles.button} />}
       </div>
     </div>
   )

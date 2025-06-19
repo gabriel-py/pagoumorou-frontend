@@ -5,13 +5,16 @@ interface IButton {
   label: string;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const Button = ({ label, className, onClick }: IButton) => (
+const Button = ({ label, className, onClick, disabled, type = 'button' }: IButton) => (
   <button
-    type='button'
+    type={type}
     className={cn(styles.button, className)}
     onClick={onClick}
+    disabled={disabled}
   >
     {label}
   </button>
