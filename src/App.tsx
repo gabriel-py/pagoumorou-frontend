@@ -23,6 +23,7 @@ import Search from "./pages/Search";
 import NewLayout from "./layouts/NewLayout";
 import RoomDetails from "./pages/RoomDetails";
 import Proposal from "./pages/Proposal";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   const router = createBrowserRouter([
@@ -111,6 +112,12 @@ function App() {
         {
           path: "proposal",
           element: <Proposal />,
+          loader: async () => null,
+          errorElement: <div>erro</div>,
+        },
+        {
+          path: "confirmation",
+          element: <Confirmation />,
           loader: async () => null,
           errorElement: <div>erro</div>,
         },

@@ -1,0 +1,35 @@
+@import "@/styles/abstracts/v2/variables";
+@import "@/styles/abstracts/v2/placeholders";
+@import "@/styles/abstracts/v2/typography";
+@import "@/styles/abstracts/v2/breakpoints";
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    span {
+        font-size: 18px;
+        color: green;
+    }
+}
+
+.proposalForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    h1 {
+        font-size: 24px;
+    }
+}
