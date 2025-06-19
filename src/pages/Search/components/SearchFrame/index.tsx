@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { Dayjs } from 'dayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import Button from '@/components/Button';
 import { fetchBrazilianLocations } from '@/utils/destination';
@@ -41,9 +42,21 @@ const SearchFrame = () => {
   const [searchInput, setSearchInput] = useState('');
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
   const [stayDuration, setStayDuration] = useState<number>();
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     console.log({ location, moveDate, gender });
+
+    const params = new URLSearchParams({
+      location: location?.label || '',
+      lat: String(location?.lat || ''),
+      lon: String(location?.lon || ''),
+      gender: gender || '',
+      moveDate: moveDate?.format('YYYY-MM-DD') || '',
+      stayDuration: String(stayDuration || ''),
+    });
+
+    navigate(`/search?${params.toString()}`);
   };
 
   console.log(options)

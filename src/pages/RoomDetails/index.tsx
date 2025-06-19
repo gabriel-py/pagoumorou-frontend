@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PlaceIcon from '@mui/icons-material/Place';
 import WcIcon from '@mui/icons-material/Wc';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
@@ -10,6 +10,11 @@ import Button from '@/components/Button';
 
 const RoomDetails = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSendProposal = () => {
+    navigate(`/proposal`);
+  };
 
   const queryParams = new URLSearchParams(location.search);
   console.log(queryParams)
@@ -62,7 +67,7 @@ const RoomDetails = () => {
         </div>
       </div>
       <div className={styles.buttonArea}>
-        <Button label="Enviar proposta" />
+        <Button label="Enviar proposta" onClick={handleSendProposal} />
       </div>
     </div>
   );

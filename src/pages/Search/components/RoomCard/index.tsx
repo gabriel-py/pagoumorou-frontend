@@ -1,5 +1,6 @@
 import WcIcon from '@mui/icons-material/Wc';
 import PlaceIcon from '@mui/icons-material/Place';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import Button from '@/components/Button';
 import Tag from '@/components/Tag';
@@ -10,8 +11,13 @@ interface IRoomCard {
 }
 
 const RoomCard = ({ index, showSeeMoreBtn = true }: IRoomCard) => {
+  const navigate = useNavigate();
   console.log(index)
   const tags = ["WiFi", "Ar Condicionado", "Geladeira"]
+
+  const handleSeeMore = () => {
+    navigate(`/details`);
+  };
 
   return (
     <div className={styles.container}>
@@ -36,7 +42,7 @@ const RoomCard = ({ index, showSeeMoreBtn = true }: IRoomCard) => {
       </div>
       <div className={styles.leftSection}>
         <h1 className={styles.price}>R$ 1.200,00 / mês</h1>
-        {showSeeMoreBtn && <Button label='Ver mais' className={styles.button} />}
+        {showSeeMoreBtn && <Button label='Ver mais' className={styles.button} onClick={handleSeeMore} />}
       </div>
     </div>
   )

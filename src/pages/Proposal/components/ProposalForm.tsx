@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import cn from 'classnames';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import Button from '@/components/Button';
 
@@ -9,6 +10,12 @@ interface IProposalForm {
 }
 
 const ProposalForm = ({ className, allFieldsDisabled = false }: IProposalForm) => {
+  const navigate = useNavigate();
+
+  const handleSendProposal = () => {
+    navigate(`/confirmation`);
+  };
+
   const [formData, setFormData] = useState({
     fullName: '',
     cpf: '',
@@ -30,6 +37,7 @@ const ProposalForm = ({ className, allFieldsDisabled = false }: IProposalForm) =
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
+    handleSendProposal();
   };
 
   return (
