@@ -13,27 +13,34 @@ import styles from './styles.module.scss';
 import Button from '@/components/Button';
 import { fetchBrazilianLocations } from '@/utils/destination';
 
-
-const genderOptions = [
-  { label: 'Não quero informar', value: 'other' },
-  { label: 'Homem', value: 'male' },
-  { label: 'Mulher', value: 'female' },
-];
-
 type LocationOption = {
     label: string;
     lat: number;
     lon: number;
 };
 
+const genderOptions = [
+  { label: 'Homem', value: 'male' },
+  { label: 'Mulher', value: 'female' },
+  { label: 'Não quero informar', value: 'other' },
+];
+
+const stayOptions = [
+    { label: '7 dias', value: 7 },
+    { label: '15 dias', value: 15 },
+    { label: '1 mês', value: 30 },
+    { label: '3 meses', value: 90 },
+];
+
 
 const SearchFrame = () => {
   const [location, setLocation] = useState<LocationOption | null>(null);
   const [options, setOptions] = useState<LocationOption[]>([]);
   const [moveDate, setMoveDate] = useState<Dayjs | null>(null);
-  const [gender, setGender] = useState('other');
+  const [gender, setGender] = useState();
   const [searchInput, setSearchInput] = useState('');
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [stayDuration, setStayDuration] = useState();
 
   const handleSearch = () => {
     console.log({ location, moveDate, gender });
@@ -104,6 +111,21 @@ const SearchFrame = () => {
           onChange={(e) => setGender(e.target.value)}
         >
           {genderOptions.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      <FormControl sx={{ minWidth: 200, flex: 1 }}>
+        <InputLabel>Tempo de estadia</InputLabel>
+        <Select
+          value={stayDuration}
+          label="Tempo de estadia"
+          onChange={(e) => setStayDuration(Number(e.target.value))}
+        >
+          {stayOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>
