@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import styles from './styles.module.scss';
 import RoomCard from './components/RoomCard';
+import SearchFrame from './components/SearchFrame';
 
 
 const Search = () => {
@@ -10,14 +11,14 @@ const Search = () => {
   console.log(queryParams)
 
   return (
-      <div className={styles.screen}>
-        <h1 className={styles.pageTitle}>Olá mundo</h1>
-        <div className={styles.roomsResults}>
-          <RoomCard index={0} />
-          <RoomCard index={1} />
-          <RoomCard index={2} />
-        </div>
+    <div className={styles.screen}>
+      <SearchFrame />
+      <div className={styles.roomsResults}>
+        <RoomCard index={0} />
+        <RoomCard index={1} />
+        <RoomCard index={2} />
       </div>
+    </div>
   );
 };
 

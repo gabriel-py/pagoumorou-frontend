@@ -3,7 +3,9 @@ import styles from './styles.module.scss';
 
 const NewLayout = () => (
     <div className={styles.screen}>
-      <Outlet />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
     </div>
   );
 

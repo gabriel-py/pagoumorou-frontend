@@ -5,6 +5,8 @@ import "./styles/global.scss";
 import "./styles/reset.scss";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import Layout from "./layouts/Layout";
 import { store } from "./store";
 import Login from "./pages/Login";
@@ -104,11 +106,13 @@ function App() {
 
   return (
     <main>
-      <GoogleOAuthProvider clientId="1013079086725-2uh2343ta3d9hq0kqbrtfep797oo7uue.apps.googleusercontent.com">
-        <Provider store={store}>
-          <RouterProvider router={router} />
-        </Provider>
-      </GoogleOAuthProvider>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <GoogleOAuthProvider clientId="1013079086725-2uh2343ta3d9hq0kqbrtfep797oo7uue.apps.googleusercontent.com">
+          <Provider store={store}>
+            <RouterProvider router={router} />
+          </Provider>
+        </GoogleOAuthProvider>
+      </LocalizationProvider>
     </main>
   );
 }

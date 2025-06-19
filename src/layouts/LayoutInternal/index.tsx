@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react';
-import Menu from '@/components/Menu';
+import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Outlet, useLocation } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@/store';
-import { checkLogin, getProfile } from '@/store/services';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import Menu from '@/components/Menu';
 
 type RouteMapping = {
   [key: string]: string;
@@ -16,20 +12,20 @@ type RouteMapping = {
 const LayoutInternal = () => {
   const [showMenu, setShowMenu] = useState(true);
   const location = useLocation();
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const { isLoggedIn, isLoadingCheckLogin, user } = useAppSelector((state) => state.user);
+  // const dispatch = useAppDispatch();
+  // const navigate = useNavigate();
+  // const { isLoggedIn, isLoadingCheckLogin, user } = useAppSelector((state) => state.user);
 
-  useEffect(() => {
-    dispatch(checkLogin());
-    dispatch(getProfile());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(checkLogin());
+  //   dispatch(getProfile());
+  // }, [dispatch]);
 
-  useEffect(() => {
-    if (isLoggedIn === false) {
-      navigate(`/login`);
-    }
-  }, [isLoggedIn, navigate]);
+  // useEffect(() => {
+  //   if (isLoggedIn === false) {
+  //     navigate(`/login`);
+  //   }
+  // }, [isLoggedIn, navigate]);
 
   const routeMapping: RouteMapping = {
     '/profile': 'settings',
@@ -38,19 +34,7 @@ const LayoutInternal = () => {
     '/upload': 'upload'
   };
 
-  const getInitialRoute = () => {
-    return routeMapping[location.pathname as keyof RouteMapping] || 'settings';
-  };
-
-  const LoadingIndicator = () => (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <CircularProgress />
-    </Box>
-  );
-
-  if (isLoadingCheckLogin) {
-    return <LoadingIndicator />;
-  }
+  const getInitialRoute = () => routeMapping[location.pathname as keyof RouteMapping] || 'settings';
 
   return (
     <div className={styles.screen}>
@@ -74,7 +58,7 @@ const LayoutInternal = () => {
           </div>
         </div>
         <div className={`${styles.content} ${showMenu ? styles.menuOpen : ''}`}>
-          {isLoggedIn && <Outlet />}
+          <Outlet />
         </div>
       </div>
     </div>

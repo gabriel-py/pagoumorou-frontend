@@ -3,17 +3,11 @@
 @import "@/styles/abstracts/v2/typography";
 @import "@/styles/abstracts/v2/breakpoints";
 
-.screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-}
-
-.roomsResults {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 36px;
+.container {
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
 }

@@ -1,7 +1,21 @@
 @import '@/styles/abstracts/v2/variables';
 
 .screen {
-    position: relative;
-    max-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     overflow-y: auto;
+}
+
+
+.content {
+    max-width: 70%;
+    width: 100%;
 }
