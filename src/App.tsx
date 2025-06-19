@@ -13,6 +13,7 @@ import NewLayout from "./layouts/NewLayout";
 import RoomDetails from "./pages/RoomDetails";
 import Proposal from "./pages/Proposal";
 import Confirmation from "./pages/Confirmation";
+import Landing from "./pages/Landing";
 
 function App() {
   const router = createBrowserRouter([
@@ -46,6 +47,17 @@ function App() {
         },
       ],
     },
+    {
+      path: "/",
+      children: [
+        {
+          path: "landing",
+          element: <Landing />,
+          loader: async () => null,
+          errorElement: <div>erro</div>,
+        },
+      ],
+    }
   ]);
 
   return (
