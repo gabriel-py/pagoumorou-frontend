@@ -46,6 +46,12 @@ const Search = () => {
         <RoomCard index={0} />
         <RoomCard index={1} />
         <RoomCard index={2} />
+        <RoomCard index={2} />
+        <RoomCard index={2} />
+        <RoomCard index={2} />
+        <RoomCard index={2} />
+        <RoomCard index={2} />
+        <RoomCard index={2} />
       </div>
     </div>
   );
