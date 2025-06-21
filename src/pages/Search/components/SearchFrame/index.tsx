@@ -7,7 +7,7 @@ import {
   FormControl,
   InputLabel,
 } from '@mui/material';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
@@ -30,18 +30,44 @@ const stayOptions = [
     { label: '7 dias', value: 7 },
     { label: '15 dias', value: 15 },
     { label: '1 mês', value: 30 },
-    { label: '3 meses', value: 90 },
+    { label: '1 semestre', value: 180 },
+    { label: '1 ano', value: 365 },
 ];
 
+interface SearchFrameProps {
+  defaultValues?: {
+    location: string;
+    lat: string;
+    lon: string;
+    gender: string;
+    moveDate: string;
+    stayDuration: string;
+  };
+}
 
-const SearchFrame = () => {
-  const [location, setLocation] = useState<LocationOption | null>(null);
+
+const SearchFrame = ({ defaultValues }: SearchFrameProps) => {
+  const [location, setLocation] = useState<LocationOption | null>(
+    defaultValues?.location
+      ? {
+          label: defaultValues.location,
+          lat: parseFloat(defaultValues.lat),
+          lon: parseFloat(defaultValues.lon),
+        }
+      : null
+  );
+
   const [options, setOptions] = useState<LocationOption[]>([]);
-  const [moveDate, setMoveDate] = useState<Dayjs | null>(null);
-  const [gender, setGender] = useState<string>();
-  const [searchInput, setSearchInput] = useState('');
+  const [moveDate, setMoveDate] = useState<Dayjs | null>(
+    defaultValues?.moveDate ? dayjs(defaultValues.moveDate) : null
+  );
+  const [gender, setGender] = useState<string>(defaultValues?.gender || '');
+  const [stayDuration, setStayDuration] = useState<number | undefined>(
+    defaultValues?.stayDuration ? Number(defaultValues.stayDuration) : undefined
+  );
+
+  const [searchInput, setSearchInput] = useState(defaultValues?.location || '');
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
-  const [stayDuration, setStayDuration] = useState<number>();
   const navigate = useNavigate();
 
   const handleSearch = () => {

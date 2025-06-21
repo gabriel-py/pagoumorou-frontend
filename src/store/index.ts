@@ -1,9 +1,9 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { userReducer } from "./user";
+import { pagouMorouReducer } from "./pagoumorou";
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  pagoumorou: pagouMorouReducer,
 });
 
 export function setupStore(preloadedState?: Partial<RootState>) {
